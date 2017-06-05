@@ -1,13 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using DomainData;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApplicationBasic
 {
@@ -30,6 +28,10 @@ namespace WebApplicationBasic
         {
             // Add framework services.
             services.AddMvc();
+
+#pragma warning disable CS0436 // Type conflicts with imported type
+            services.AddDbContext<FinalProjectContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FinalProjectContext")));
+#pragma warning restore CS0436 // Type conflicts with imported type
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
