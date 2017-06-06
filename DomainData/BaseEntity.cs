@@ -6,8 +6,13 @@ namespace DomainData
 {
     public abstract class BaseEntity
     {
+        [Key]
+        public int Id { get; set; }
+        [Column(TypeName = "date")]
         public DateTime CreatedDate { get; set; }
+        [Column(TypeName = "date")]
         public DateTime ModifiedDate { get; set; }
+        [Required]
         public bool IsDeleted { get; set; }
     }
 }

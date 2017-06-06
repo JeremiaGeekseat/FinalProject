@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using DomainData;
 using Microsoft.EntityFrameworkCore;
+using FinalProject.Migrations;
 
 namespace WebApplicationBasic
 {
@@ -64,6 +65,8 @@ namespace WebApplicationBasic
                     name: "spa-fallback",
                     defaults: new { controller = "Home", action = "Index" });
             });
+
+            SeedData.Initialize(app.ApplicationServices);
         }
     }
 }
