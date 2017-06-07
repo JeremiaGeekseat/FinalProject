@@ -1,10 +1,8 @@
-﻿using DomainData;
-using DomainRepository;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using FinalProject.DomainData;
+using FinalProject.DomainRepository;
+using System.Threading.Tasks;
 
-namespace DomainService
+namespace FinalProject.DomainService
 {
     public interface IReviewService : IRepository<Review>
     {

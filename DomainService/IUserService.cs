@@ -1,11 +1,10 @@
-﻿using DomainData;
-using DomainRepository;
-using System.Collections.Generic;
+﻿using FinalProject.DomainData;
+using FinalProject.DomainRepository;
 using System.Threading.Tasks;
 
-namespace DomainService
+namespace FinalProject.DomainService
 {
-    public interface IUserService : IRepository<User>
+    interface IUserService : IRepository<User>
     {
         Task<User> GetUserByEmail(string email);
     }

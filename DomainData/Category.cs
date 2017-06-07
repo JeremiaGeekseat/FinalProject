@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace DomainData
+namespace FinalProject.DomainData
 {
     [Table("Category")]
     public class Category : BaseEntity

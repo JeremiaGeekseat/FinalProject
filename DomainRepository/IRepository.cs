@@ -1,8 +1,10 @@
-﻿using DomainData;
+﻿using FinalProject.DomainData;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace DomainRepository
+namespace FinalProject.DomainRepository
 {
     public interface IRepository<T> where T : BaseEntity
     {

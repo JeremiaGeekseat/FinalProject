@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DomainData;
+﻿using FinalProject.DomainData;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Linq;
 
-namespace DomainService
+namespace FinalProject.DomainService
 {
     public class UserService : IUserService
     {

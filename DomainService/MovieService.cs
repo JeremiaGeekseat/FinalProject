@@ -1,11 +1,9 @@
-﻿using DomainData;
+﻿using FinalProject.DomainData;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace DomainService
+namespace FinalProject.DomainService
 {
     public class MovieService : IMovieService
     {

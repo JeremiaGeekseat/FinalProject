@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DomainData
+namespace FinalProject.DomainData
 {
     public class FinalProjectContext : DbContext
     {

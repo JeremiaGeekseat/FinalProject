@@ -3,13 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using DomainData;
+using FinalProject.DomainData;
 
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(FinalProjectContext))]
-    [Migration("20170606011018_CreateInitial")]
-    partial class CreateInitial
+    [Migration("20170607030423_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -17,7 +17,7 @@ namespace FinalProject.Migrations
                 .HasAnnotation("ProductVersion", "1.1.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("DomainData.Category", b =>
+            modelBuilder.Entity("FinalProject.DomainData.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -37,7 +37,7 @@ namespace FinalProject.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("DomainData.Contact", b =>
+            modelBuilder.Entity("FinalProject.DomainData.Contact", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -67,7 +67,7 @@ namespace FinalProject.Migrations
                     b.ToTable("Contact");
                 });
 
-            modelBuilder.Entity("DomainData.Favorite", b =>
+            modelBuilder.Entity("FinalProject.DomainData.Favorite", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -93,7 +93,7 @@ namespace FinalProject.Migrations
                     b.ToTable("Favorite");
                 });
 
-            modelBuilder.Entity("DomainData.Movie", b =>
+            modelBuilder.Entity("FinalProject.DomainData.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -128,7 +128,7 @@ namespace FinalProject.Migrations
                     b.ToTable("Movie");
                 });
 
-            modelBuilder.Entity("DomainData.Review", b =>
+            modelBuilder.Entity("FinalProject.DomainData.Review", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -158,7 +158,7 @@ namespace FinalProject.Migrations
                     b.ToTable("Review");
                 });
 
-            modelBuilder.Entity("DomainData.User", b =>
+            modelBuilder.Entity("FinalProject.DomainData.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -188,41 +188,41 @@ namespace FinalProject.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("DomainData.Contact", b =>
+            modelBuilder.Entity("FinalProject.DomainData.Contact", b =>
                 {
-                    b.HasOne("DomainData.User", "User")
+                    b.HasOne("FinalProject.DomainData.User", "User")
                         .WithMany("Contacts")
                         .HasForeignKey("UserId");
                 });
 
-            modelBuilder.Entity("DomainData.Favorite", b =>
+            modelBuilder.Entity("FinalProject.DomainData.Favorite", b =>
                 {
-                    b.HasOne("DomainData.Movie", "Movie")
+                    b.HasOne("FinalProject.DomainData.Movie", "Movie")
                         .WithMany("Favorites")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("DomainData.User", "User")
+                    b.HasOne("FinalProject.DomainData.User", "User")
                         .WithMany("Favorites")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("DomainData.Movie", b =>
+            modelBuilder.Entity("FinalProject.DomainData.Movie", b =>
                 {
-                    b.HasOne("DomainData.Category", "Category")
+                    b.HasOne("FinalProject.DomainData.Category", "Category")
                         .WithMany("Movies")
                         .HasForeignKey("CategoryId");
                 });
 
-            modelBuilder.Entity("DomainData.Review", b =>
+            modelBuilder.Entity("FinalProject.DomainData.Review", b =>
                 {
-                    b.HasOne("DomainData.Movie", "Movie")
+                    b.HasOne("FinalProject.DomainData.Movie", "Movie")
                         .WithMany("Reviews")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("DomainData.User", "User")
+                    b.HasOne("FinalProject.DomainData.User", "User")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
